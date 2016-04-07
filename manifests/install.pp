@@ -12,7 +12,7 @@ class profile_rsyslog::install {
 
   class { 'rsyslog::server':
     enable_tcp                => true,
-    enable_udp                => false,
+    enable_udp                => true,
     enable_relp               => false,
     enable_onefile            => false,
     server_dir                => '/srv/log/',
