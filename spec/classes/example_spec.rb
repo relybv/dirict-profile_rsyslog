@@ -26,6 +26,8 @@ describe 'profile_rsyslog' do
           it { is_expected.to contain_class('rsyslog::params') }
           it { is_expected.to contain_class('rsyslog::service') }
 
+          it { is_expected.to contain_file('/srv/log') }
+
         end
       end
     end
