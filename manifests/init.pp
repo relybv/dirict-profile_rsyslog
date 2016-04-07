@@ -7,7 +7,14 @@
 # [*sample_parameter*]
 #   Explanation of what this parameter affects and what it defaults to.
 #
-class profile_rsyslog
-{
-  # a profile class includes one or more classes, please include below
+class profile_rsyslog (
+) inherits ::profile_rsyslog::params {
+
+  # validate parameters here
+
+  class { '::profile_rsyslog::install': } ->
+  class { '::profile_rsyslog::config': } ~>
+  class { '::profile_rsyslog::service': } ->
+  Class['::profile_rsyslog']
+
 }

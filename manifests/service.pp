@@ -5,10 +5,4 @@
 #
 class profile_rsyslog::service {
 
-  service { $::profile_rsyslog::service_name:
-    ensure     => running,
-    enable     => true,
-    hasstatus  => true,
-    hasrestart => true,
-  }
 }
