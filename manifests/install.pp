@@ -4,10 +4,15 @@
 #
 class profile_rsyslog::install {
 
+  user { 'syslog':
+    ensure => present,
+  }
+
   file { '/srv/log':
-    ensure => directory,
-    owner  => 'syslog',
-    group  => 'syslog',
+    ensure  => directory,
+    owner   => 'syslog',
+    group   => 'syslog',
+    require => User[ 'syslog'],
   }
 
   class { 'rsyslog::server':
