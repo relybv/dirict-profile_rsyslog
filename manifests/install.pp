@@ -15,15 +15,11 @@ class profile_rsyslog::install {
     require => User[ 'syslog'],
   }
 
-  class { 'rsyslog':
-    system_log_rate_limit_interval => undef,
-  }
-
   class { 'rsyslog::server':
     enable_tcp                => true,
     enable_udp                => true,
     enable_relp               => false,
-    enable_onefile            => true,
+    enable_onefile            => false,
     server_dir                => '/srv/log/',
     custom_config             => undef,
     port                      => '514',
