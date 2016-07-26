@@ -21,7 +21,6 @@ class profile_rsyslog::install {
     enable_relp               => false,
     enable_onefile            => false,
     server_dir                => '/srv/log/',
-    custom_config             => undef,
     port                      => '514',
     address                   => '*',
     high_precision_timestamps => false,
