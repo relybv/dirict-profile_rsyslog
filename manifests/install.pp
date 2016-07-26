@@ -27,7 +27,7 @@ class profile_rsyslog::install {
     high_precision_timestamps => false,
     log_templates             => false,
     actionfiletemplate        => false,
-    custom_config             => 'rsyslog/server-hostname.conf.erb'
+    custom_config             => 'rsyslog/server-hostname.conf.erb',
     require                   => File['/srv/log'],
   }
 
