@@ -15,7 +15,7 @@ class profile_rsyslog::install {
     require => User[ 'syslog'],
   }
 
-  class { 'rsyslog':
+  class { '::rsyslog':
     preserve_fqdn => true,
   }
 
