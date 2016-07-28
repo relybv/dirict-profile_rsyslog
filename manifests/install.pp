@@ -3,6 +3,10 @@
 # This class is called from profile_rsyslog for install.
 #
 class profile_rsyslog::install {
+  # prevent direct use of subclass
+  if $caller_module_name != $module_name {
+    fail("Use of private class ${name} by ${caller_module_name}")
+  }
 
   user { 'syslog':
     ensure => present,
