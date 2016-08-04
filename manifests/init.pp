@@ -12,9 +12,7 @@ class profile_rsyslog (
 
   # validate parameters here
   if 'vdb' in $::disks {
-    class { '::profile_rsyslog::lvm':
-      notify => Class[ '::profile_rsyslog::install' ],
-    }
+    class { '::profile_rsyslog::lvm': }
   }
 
   class { '::profile_rsyslog::install': } ->
