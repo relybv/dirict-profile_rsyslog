@@ -6,6 +6,7 @@ fixtures:
     ntp: "https://github.com/puppetlabs/puppetlabs-ntp.git"
     rspec_monitor: "https://github.com/pgomersbach/test-rspec_monitor.git"
     rsyslog: "https://github.com/saz/puppet-rsyslog.git"
+    lvm: "https://github.com/puppetlabs/puppetlabs-lvm.git"
 
   symlinks:
     profile_rsyslog: "#{source_dir}"

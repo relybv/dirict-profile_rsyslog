@@ -4,6 +4,7 @@
 # It sets variables according to platform.
 #
 class profile_rsyslog::params {
+  $logvol = '/dev/vdb'
   case $::osfamily {
     'Debian': {
       $package_name = 'profile_rsyslog'
