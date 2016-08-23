@@ -29,7 +29,7 @@ class profile_rsyslog::lvm {
     ensure  => present,
     fs_type => 'ext4',
     atboot  => true,
-    require => Logical_volume[ 'logvg' ],
+    require => Logical_volume[ 'loglv' ],
   }
 
   mount { '/srv/log':
