@@ -5,6 +5,7 @@
 #
 class profile_rsyslog::params {
   $logvol = '/dev/vdb'
+  $packages = [ 'mysql-client' ]
   case $::osfamily {
     'Debian': {
       $package_name = 'profile_rsyslog'

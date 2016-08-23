@@ -8,6 +8,8 @@ class profile_rsyslog::install {
     fail("Use of private class ${name} by ${caller_module_name}")
   }
 
+  # install packages
+  ensure_packages( $::profile_rsyslog::packages )
   user { 'syslog':
     ensure => present,
   }
