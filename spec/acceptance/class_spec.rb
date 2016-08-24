@@ -23,10 +23,7 @@ describe 'profile_rsyslog class' do
       end
     end
 
-
-  
-# a profile class should test if the included packages and services are installed, enabled and running. Please adept to your needs. See examples below:
-   describe package('rsyslog') do
+    describe package('rsyslog') do
       it { is_expected.to be_installed }
     end
 
@@ -38,7 +35,12 @@ describe 'profile_rsyslog class' do
     describe port(514) do
       it { should be_listening.with('tcp') }
     end
-  
+
+    describe file('/srv/log') do
+      it { should be_owned_by 'syslog' }
+      it { should be_grouped_into 'syslog' }
+      it { should be_directory }
+    end
 
   end
 end
