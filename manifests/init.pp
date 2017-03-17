@@ -11,8 +11,10 @@ class profile_rsyslog (
 ) inherits ::profile_rsyslog::params {
 
   # validate parameters here
-  if 'vdb' in $::disks {
-    class { '::profile_rsyslog::lvm': }
+  if versioncmp($::facterversion, '2.4.6') > 0 {
+    if 'vdb' in $::disks {
+      class { '::profile_rsyslog::lvm': }
+    }
   }
 
   class { '::profile_rsyslog::install': } ->
