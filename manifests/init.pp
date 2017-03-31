@@ -17,9 +17,9 @@ class profile_rsyslog (
     }
   }
 
-  class { '::profile_rsyslog::install': } ->
-  class { '::profile_rsyslog::config': } ~>
-  class { '::profile_rsyslog::service': } ->
-  Class['::profile_rsyslog']
+  class { '::profile_rsyslog::install': }
+  -> class { '::profile_rsyslog::config': }
+  ~> class { '::profile_rsyslog::service': }
+  -> Class['::profile_rsyslog']
 
 }
