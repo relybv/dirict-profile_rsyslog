@@ -27,6 +27,8 @@ describe 'profile_rsyslog' do
           it { is_expected.to contain_class('rsyslog::service') }
 
           it { is_expected.to contain_file('/srv/log') }
+          it { is_expected.to contain_package('mysql-client') }
+          it { is_expected.to contain_user('syslog') }
 
         end
       end
